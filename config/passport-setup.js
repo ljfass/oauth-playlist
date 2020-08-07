@@ -8,8 +8,9 @@ passport.use(new GoogleStrategy({
   clientID: keys.google.clientID,
   clientSecret: keys.google.clientSecret,
   proxy: true
-}, (data) => {
+}, (accessToken, refreshToken, profile, done) => {
   // passport callback function
-  console.log('hello')
+  console.log('passport callback function fired');
+  console.log(profile)
 })
 )
